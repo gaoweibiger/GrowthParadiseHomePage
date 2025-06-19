@@ -72,6 +72,12 @@ const Home: React.FC = () => {
       title: '七岁成长照',
       image: '/media/微信图片_20250321161135.jpg',
       description: '七岁生日的珍贵留影，灿烂的笑容记录着从幼儿园到小学的美好蜕变'
+    },
+    {
+      id: 6,
+      title: '快乐时光',
+      image: '/media/微信图片_20250321161230.jpg',
+      description: '灿烂笑容中洋溢着纯真的快乐，每一个瞬间都是童年最美好的回忆'
     }
   ];
 
@@ -94,14 +100,14 @@ const Home: React.FC = () => {
         <div className="flex-1 flex items-center justify-center pt-20 pb-16 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-12">
-              <div className="text-8xl mb-6 animate-bounce drop-shadow-2xl">🏰</div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
-                高睿浠的
-                <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent drop-shadow-lg">
+              <div className="text-6xl sm:text-7xl md:text-8xl mb-6 animate-bounce drop-shadow-2xl">🏰</div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight drop-shadow-2xl">
+                <span className="block sm:inline">高睿浠的</span>
+                <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent drop-shadow-lg block sm:inline">
                   成长乐园
                 </span>
               </h1>
-              <p className="text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium px-4">
                 记录每一个珍贵的成长瞬间，陪伴宝贝快乐学习成长
               </p>
             </div>
@@ -121,14 +127,25 @@ const Home: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                   
                   {/* 内容 */}
-                  <div className="relative p-8 h-full">
-                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl`}>
-                      <Icon className="w-10 h-10 text-white drop-shadow-lg" />
+                  <div className="relative p-8 h-full flex flex-col">
+                    {/* 图标区域 - 固定在顶部 */}
+                    <div className="flex justify-center mb-6">
+                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl flex-shrink-0`}>
+                        <Icon className="w-10 h-10 text-white drop-shadow-lg" />
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">{title}</h3>
-                    <p className="text-white/90 leading-relaxed text-lg drop-shadow-md">{description}</p>
-                    <div className="mt-6 text-white/80 group-hover:text-white transition-colors duration-300 font-medium">
-                      点击探索 →
+
+                    {/* 文字内容区域 - 居中对齐 */}
+                    <div className="flex-1 flex flex-col justify-center text-center">
+                      <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">{title}</h3>
+                      <p className="text-white/90 leading-relaxed text-lg drop-shadow-md">{description}</p>
+                    </div>
+
+                    {/* 底部按钮区域 */}
+                    <div className="mt-6 text-center">
+                      <div className="text-white/80 group-hover:text-white transition-colors duration-300 font-medium">
+                        点击探索 →
+                      </div>
                     </div>
                   </div>
 
@@ -140,13 +157,13 @@ const Home: React.FC = () => {
 
             {/* 成长相片展示区 */}
             <div className="mb-16">
-              <div className="flex items-center justify-center gap-3 mb-8">
-                <Camera className="w-8 h-8 text-white drop-shadow-lg" />
-                <h2 className="text-3xl font-bold text-white drop-shadow-lg">成长足迹</h2>
-                <Heart className="w-8 h-8 text-pink-300 drop-shadow-lg" />
+              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8">
+                <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-white drop-shadow-lg" />
+                <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">成长足迹</h2>
+                <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-pink-300 drop-shadow-lg" />
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
                 {photos.map((photo, index) => (
                   <div
                     key={photo.id}
