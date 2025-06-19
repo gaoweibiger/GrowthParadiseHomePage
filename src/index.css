@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义动画 */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* 彩虹光照效果 */
+@keyframes rainbow-glow {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(255, 0, 150, 0.6));
+  }
+  16.66% {
+    background-position: 16.66% 50%;
+    filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.6));
+  }
+  33.33% {
+    background-position: 33.33% 50%;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.6));
+  }
+  50% {
+    background-position: 50% 50%;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 0, 0.6));
+  }
+  66.66% {
+    background-position: 66.66% 50%;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+  }
+  83.33% {
+    background-position: 83.33% 50%;
+    filter: drop-shadow(0 0 20px rgba(0, 100, 255, 0.6));
+  }
+  100% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 20px rgba(150, 0, 255, 0.6));
+  }
+}
+
+.rainbow-text {
+  background: linear-gradient(
+    45deg,
+    #ff0096,
+    #ff6400,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0064ff,
+    #9600ff,
+    #ff0096
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-glow 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
